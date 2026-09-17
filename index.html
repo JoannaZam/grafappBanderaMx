@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bandera de México | Interfaz Interactiva</title>
+
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         DECORACIÓN SUTIL DEL FONDO
+         ===================================================== -->
+
+    <div class="decoracion decoracion-verde"></div>
+    <div class="decoracion decoracion-roja"></div>
+
+
+    <main class="contenedor">
+
+        <!-- =================================================
+             ENCABEZADO
+             ================================================= -->
+
+        <header class="encabezado">
+
+            <h1>
+                Bandera de
+                <span>México</span>
+            </h1>
+
+        </header>
+
+
+        <!-- =================================================
+             CONTROLES
+             ================================================= -->
+
+        <section class="controles">
+
+
+            <!-- ============================
+                 CONTROL VERDE
+                 ============================ -->
+
+            <article class="tarjeta-control tarjeta-verde">
+
+                <div class="cabecera-control">
+
+                    <div class="titulo-control">
+
+                        <div class="icono-control icono-verde">
+                            ♧
+                        </div>
+
+                        <div>
+                            <span class="numero-control"></span>
+                            <h2>Esperanza</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="valor-control verde-valor" id="valorVerde">
+                        #008A6B
+                    </div>
+
+                </div>
+
+                <div class="slider-contenedor">
+
+                    <input
+                        type="range"
+                        id="controlVerde"
+                        min="0"
+                        max="100"
+                        value="55"
+                    >
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ============================
+                 CONTROL ESCUDO
+                 ============================ -->
+
+            <article class="tarjeta-control tarjeta-blanco">
+
+                <div class="cabecera-control">
+
+                    <div class="titulo-control">
+
+                        <div class="icono-control icono-blanco">
+                            ◉
+                        </div>
+
+                        <div>
+                            <span class="numero-control"></span>
+                            <h2>Unidad</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="valor-control blanco-valor" id="valorEscudo">
+                    </div>
+
+                </div>
+
+                <div class="slider-contenedor">
+
+                    <input
+                        type="range"
+                        id="controlEscudo"
+                        min="0"
+                        max="100"
+                        value="100"
+                    >
+
+                </div>
+
+            </article>
+
+
+
+            <!-- ============================
+                 CONTROL ROJO
+                 ============================ -->
+
+            <article class="tarjeta-control tarjeta-rojo">
+
+                <div class="cabecera-control">
+
+                    <div class="titulo-control">
+
+                        <div class="icono-control icono-rojo">
+                            ♥
+                        </div>
+
+                        <div>
+                            <span class="numero-control"></span>
+                            <h2>Sangre de nuestros<br>héroes nacionales</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="valor-control rojo-valor" id="valorRojo">
+                        #E51B2E
+                    </div>
+
+                </div>
+
+                <div class="slider-contenedor">
+
+                    <input
+                        type="range"
+                        id="controlRojo"
+                        min="0"
+                        max="100"
+                        value="55"
+                    >
+
+                </div>
+            </article>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BANDERA
+             ================================================= -->
+
+        <section class="seccion-bandera">
+
+            <div class="bandera-contenedor">
+
+                <div class="bandera" id="bandera">
+
+                    <!-- Franja verde -->
+                    <div
+                        class="franja franja-verde"
+                        id="franjaVerde">
+                    </div>
+
+
+                    <!-- Franja blanca -->
+                    <div class="franja franja-blanca">
+
+                        <!--
+                            IMPORTANTE:
+                            Esta imagen será la única que tendrá
+                            control de transparencia.
+                        -->
+
+                        <img
+                            id="escudo"
+                            src="escudo-mexico.png"
+                            alt="Escudo Nacional de México"
+                        >
+
+                    </div>
+
+
+                    <!-- Franja roja -->
+                    <div
+                        class="franja franja-roja"
+                        id="franjaRoja">
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="instruccion">
+
+                <span class="linea-verde"></span>
+
+                <p>
+                    Utiliza los controles superiores para modificar
+                    la bandera en tiempo real.
+                </p>
+
+                <span class="linea-roja"></span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DATOS INSTITUCIONALES
+             ================================================= -->
+
+        <section class="institucional">
+
+
+            <!-- LOGOS -->
+
+            <div class="zona-logos">
+
+                <img
+                    src="logo-tecnm.png"
+                    alt="Logo del Tecnológico Nacional de México"
+                    class="logo-tecnm"
+                >
+
+                <div class="separador-logo"></div>
+
+                <img
+                    src="logo-itp.png"
+                    alt="Logo del Instituto Tecnológico de Pachuca"
+                    class="logo-itp"
+                >
+
+            </div>
+
+
+
+            <!-- INFORMACIÓN DEL INSTITUTO -->
+
+            <div class="informacion-institucional">
+
+                <div class="titulo-institucional">
+
+                    <div class="icono-datos">
+                        ▦
+                    </div>
+
+                    <div>
+                        <h2>Datos institucionales</h2>
+                    </div>
+
+                </div>
+
+
+                <!-- Instituto -->
+
+                <div class="dato-institucional">
+
+                    <span class="etiqueta-dato">
+                        Instituto
+                    </span>
+
+                    <strong>
+                        Instituto Tecnológico de Pachuca
+                    </strong>
+
+                </div>
+
+
+                <!-- Carrera -->
+
+                <div class="dato-institucional">
+
+                    <span class="etiqueta-dato">
+                        Carrera
+                    </span>
+
+                    <strong>
+                        Ingeniería en Sistemas Computacionales
+                    </strong>
+
+                </div>
+
+
+                <!-- Docente -->
+
+                <div class="dato-institucional">
+
+                    <span class="etiqueta-dato">
+                        Docente
+                    </span>
+
+                    <strong>
+                        Luis Alejandro Santana Valdez
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 EQUIPO
+                 ================================================= -->
+
+            <div class="informacion-equipo">
+
+                <div class="titulo-equipo">
+
+                    <span>👥</span>
+
+                    <div>
+                        <h2>Equipo</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="tabla-equipo">
+
+                    <div class="fila-equipo encabezado-tabla">
+
+                        <span>No.</span>
+                        <span>Nombre del alumno</span>
+                        <span>Número de control</span>
+
+                    </div>
+
+
+                    <!-- ALUMNO 1 -->
+
+                    <div class="fila-equipo">
+
+                        <span>01</span>
+
+                        <strong>
+                            Zamora Garcia Joanna Dennis
+                        </strong>
+
+                        <span>
+                           24200106
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 FECHA Y FRASE
+                 ================================================= -->
+
+            <div class="zona-final">
+
+                <div class="fecha">
+
+                    <span class="etiqueta-dato">
+                        Fecha
+                    </span>
+
+                    <strong>
+                        15/09/2026
+                    </strong>
+
+                </div>
+
+
+                <div class="orgullo">
+
+                    <div class="decoracion-orgullo">
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <h3>
+                        Orgullo<br>
+                        <em>Mexicano</em>
+                    </h3>
+
+                    <div class="corazon">
+                        ♡
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PIE DE PÁGINA
+             ================================================= -->
+
+        <footer>
+
+            <span class="linea-footer"></span>
+
+            <p>
+                Instituto Tecnológico de Pachuca
+            </p>
+
+            <span class="linea-footer"></span>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript externo -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

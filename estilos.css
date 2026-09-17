@@ -1,0 +1,1669 @@
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    /* Colores de la interfaz */
+
+    --verde-oscuro: #003b2d;
+    --verde: #008a6b;
+    --verde-intenso: #00c878;
+
+    --rojo-oscuro: #5a0712;
+    --rojo: #ce1126;
+    --rojo-intenso: #ff1638;
+
+    --azul-texto: #173247;
+
+    --gris-texto: #607078;
+    --gris-claro: #edf1ef;
+
+    --blanco: #ffffff;
+    --fondo: #f7f8f7;
+
+    --borde: #dfe5e2;
+
+    --sombra:
+        0 12px 35px rgba(19, 45, 35, 0.09);
+
+    --radio: 20px;
+}
+
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #f8f9f8 50%,
+            #f1f4f2 100%
+        );
+
+    color: var(--azul-texto);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   DECORACIÓN DEL FONDO
+   ========================================================= */
+
+.decoracion {
+
+    position: fixed;
+
+    width: 330px;
+    height: 18px;
+
+    border-radius: 100%;
+
+    opacity: 0.12;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+.decoracion-verde {
+
+    top: 30px;
+    left: -90px;
+
+    background: var(--verde);
+
+    transform: rotate(-25deg);
+}
+
+.decoracion-roja {
+
+    bottom: 35px;
+    right: -90px;
+
+    background: var(--rojo);
+
+    transform: rotate(-25deg);
+}
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.contenedor {
+
+    width: min(1380px, 92%);
+
+    margin: auto;
+
+    padding:
+        35px 0
+        30px;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.encabezado {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+/* Etiqueta superior */
+
+.etiqueta {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding:
+        8px 22px;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--verde-oscuro),
+            var(--verde)
+        );
+
+    color: white;
+
+    font-size: 0.72rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2.5px;
+
+    box-shadow:
+        0 7px 20px rgba(0, 91, 65, 0.18);
+
+    margin-bottom: 13px;
+}
+
+.etiqueta span {
+
+    width: 14px;
+
+    height: 2px;
+
+    background: white;
+
+    border-radius: 5px;
+}
+
+
+/* Título */
+
+.encabezado h1 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(2.5rem, 6vw, 4.4rem);
+
+    line-height: 1;
+
+    color: #172f3e;
+
+    font-weight: 700;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 13px;
+}
+
+.encabezado h1 span {
+
+    color: var(--verde);
+
+}
+
+
+.encabezado p {
+
+    font-size: 1.05rem;
+
+    color: var(--gris-texto);
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   CONTROLES
+   ========================================================= */
+
+.controles {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Tarjetas */
+
+.tarjeta-control {
+
+    position: relative;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border:
+
+        1px solid
+        var(--borde);
+
+    border-radius:
+        var(--radio);
+
+    padding:
+        20px 22px;
+
+    box-shadow:
+        var(--sombra);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.tarjeta-control:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 38px
+        rgba(19, 45, 35, 0.12);
+}
+
+
+/* Bordes superiores */
+
+.tarjeta-verde {
+
+    border-color:
+        rgba(0, 168, 115, 0.45);
+}
+
+.tarjeta-rojo {
+
+    border-color:
+        rgba(255, 22, 56, 0.4);
+}
+
+
+/* =========================================================
+   CABECERA DE LOS CONTROLES
+   ========================================================= */
+
+.cabecera-control {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    gap: 15px;
+}
+
+.titulo-control {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    min-width: 0;
+}
+
+
+/* Iconos */
+
+.icono-control {
+
+    width: 47px;
+    height: 47px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 1.45rem;
+
+    font-weight: bold;
+}
+
+.icono-verde {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--verde),
+            var(--verde-intenso)
+        );
+
+    box-shadow:
+        0 7px 16px
+        rgba(0, 150, 100, 0.22);
+}
+
+.icono-blanco {
+
+    color: var(--azul-texto);
+
+    background:
+        #f7f8f7;
+
+    border:
+        1px solid #cbd3cf;
+}
+
+.icono-rojo {
+
+    color: white;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--rojo),
+            var(--rojo-intenso)
+        );
+
+    box-shadow:
+        0 7px 16px
+        rgba(210, 20, 45, 0.2);
+}
+
+
+/* Número */
+
+.numero-control {
+
+    display: block;
+
+    font-size: 0.65rem;
+
+    color: #899690;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 2px;
+}
+
+
+/* Título */
+
+.titulo-control h2 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 1.2rem;
+
+    line-height: 1.1;
+
+    color: #183243;
+}
+
+
+/* =========================================================
+   VALOR
+   ========================================================= */
+
+.valor-control {
+
+    padding:
+        7px 11px;
+
+    border-radius:
+        8px;
+
+    font-family:
+        Consolas,
+        monospace;
+
+    font-size:
+        0.82rem;
+
+    font-weight:
+        700;
+
+    white-space:
+        nowrap;
+}
+
+.verde-valor {
+
+    background: #e6f6f0;
+
+    color:
+        #006d51;
+}
+
+.blanco-valor {
+
+    background:
+        #eef1f0;
+
+    color:
+        #213c4d;
+}
+
+.rojo-valor {
+
+    background:
+        #fde8eb;
+
+    color:
+        #c10f24;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+.descripcion-control {
+
+    color:
+        var(--gris-texto);
+
+    font-size:
+        0.82rem;
+
+    margin:
+        14px 0 16px;
+}
+
+
+/* =========================================================
+   SLIDERS
+   ========================================================= */
+
+.slider-contenedor {
+
+    width: 100%;
+}
+
+
+/* Estilo base */
+
+input[type="range"] {
+
+    appearance: none;
+
+    width: 100%;
+
+    height: 6px;
+
+    border-radius:
+        10px;
+
+    outline: none;
+
+    cursor: pointer;
+
+    background:
+        #dfe5e3;
+}
+
+
+/* Verde */
+
+.tarjeta-verde input[type="range"] {
+
+    background:
+        linear-gradient(
+            to right,
+            var(--verde-oscuro),
+            var(--verde-intenso)
+        );
+}
+
+
+/* Blanco */
+
+.tarjeta-blanco input[type="range"] {
+
+    background:
+        linear-gradient(
+            to right,
+            #d8ddda,
+            #4d5a56
+        );
+}
+
+
+/* Rojo */
+
+.tarjeta-rojo input[type="range"] {
+
+    background:
+        linear-gradient(
+            to right,
+            var(--rojo-oscuro),
+            var(--rojo-intenso)
+        );
+}
+
+
+/* Thumb Chrome / Edge / Safari */
+
+input[type="range"]::-webkit-slider-thumb {
+
+    appearance: none;
+
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    background:
+        white;
+
+    box-shadow:
+        0 3px 9px
+        rgba(0, 0, 0, 0.18);
+
+    border:
+        3px solid #6c7974;
+
+    transition:
+        transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+
+    transform:
+        scale(1.1);
+}
+
+
+/* Thumb verde */
+
+.tarjeta-verde
+input[type="range"]::-webkit-slider-thumb {
+
+    border-color:
+        #009d70;
+}
+
+
+/* Thumb rojo */
+
+.tarjeta-rojo
+input[type="range"]::-webkit-slider-thumb {
+
+    border-color:
+        #e01631;
+}
+
+
+/* Thumb Firefox */
+
+input[type="range"]::-moz-range-thumb {
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    border:
+        3px solid #6c7974;
+
+    box-shadow:
+        0 3px 9px
+        rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   ETIQUETAS DE SLIDER
+   ========================================================= */
+
+.etiquetas-slider {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    margin-top:
+        9px;
+
+    font-size:
+        0.7rem;
+
+    color:
+        #607078;
+}
+
+
+/* =========================================================
+   BANDERA
+   ========================================================= */
+
+.seccion-bandera {
+
+    margin-bottom:
+        35px;
+}
+
+
+/*
+   La bandera ahora es más pequeña y mantiene
+   una proporción similar a la bandera real.
+*/
+
+.bandera-contenedor {
+
+    width:
+        min(860px, 82%);
+
+    margin:
+        0 auto;
+
+    padding:
+        9px;
+
+    background:
+        rgba(255,255,255,0.75);
+
+    border:
+        1px solid #e1e6e3;
+
+    border-radius:
+        20px;
+
+    box-shadow:
+        0 16px 35px
+        rgba(20, 45, 34, 0.13);
+}
+
+
+.bandera {
+    width: 100%;
+
+    /* Hace la bandera más alargada y menos alta */
+    aspect-ratio: 16 / 7;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    overflow: hidden;
+
+    border-radius:
+        13px;
+
+    background:
+        white;
+}
+
+/* Franjas */
+
+.franja {
+
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.franja-verde {
+
+    background:
+        #008a6b;
+
+    transition:
+        background-color 0.12s linear;
+}
+
+
+.franja-blanca {
+
+    background:
+        #ffffff;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.franja-roja {
+
+    background:
+        #ce1126;
+
+    transition:
+        background-color 0.12s linear;
+}
+
+
+/* =========================================================
+   ESCUDO
+   ========================================================= */
+
+#escudo {
+    width: 60%;
+    max-width: 280px;
+    max-height: 85%;
+    object-fit: contain;
+    opacity: 1;
+    transition: opacity 0.12s linear;
+}
+
+/* =========================================================
+   INSTRUCCIÓN
+   ========================================================= */
+
+.instruccion {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    margin-top:
+        15px;
+
+    color:
+        #607078;
+
+    font-size:
+        0.78rem;
+
+    text-align:
+        center;
+}
+
+
+.linea-verde,
+.linea-roja {
+
+    display: block;
+
+    width:
+        38px;
+
+    height:
+        2px;
+
+    border-radius:
+        10px;
+}
+
+
+.linea-verde {
+
+    background:
+        var(--verde);
+}
+
+
+.linea-roja {
+
+    background:
+        var(--rojo);
+}
+
+
+/* =========================================================
+   DATOS INSTITUCIONALES
+   ========================================================= */
+
+.institucional {
+
+    display: grid;
+
+    grid-template-columns:
+        0.85fr 1.4fr 1.5fr 0.65fr;
+
+    background:
+        rgba(255,255,255,0.96);
+
+    border:
+        1px solid #dfe5e2;
+
+    border-radius:
+        21px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        var(--sombra);
+}
+
+
+/* =========================================================
+   ZONA DE LOGOS
+   ========================================================= */
+
+.zona-logos {
+
+    min-height:
+        240px;
+
+    padding:
+        25px;
+
+    display: flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        18px;
+
+    border-right:
+        1px solid #dfe5e2;
+}
+
+
+.zona-logos img {
+
+    object-fit:
+        contain;
+
+    display:
+        block;
+}
+
+
+.logo-tecnm {
+
+    width:
+        125px;
+
+    max-height:
+        100px;
+}
+
+
+.logo-itp {
+
+    width:
+        110px;
+
+    max-height:
+        110px;
+}
+
+
+.separador-logo {
+
+    width:
+        1px;
+
+    height:
+        105px;
+
+    background:
+        #d9e0dd;
+}
+
+
+/* =========================================================
+   INFORMACIÓN
+   ========================================================= */
+
+.informacion-institucional {
+
+    padding:
+        25px 28px;
+
+    border-right:
+        1px solid #dfe5e2;
+}
+
+
+.titulo-institucional {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        17px;
+}
+
+
+.icono-datos {
+
+    width:
+        36px;
+
+    height:
+        36px;
+
+    border-radius:
+        9px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    color:
+        white;
+
+    background:
+        var(--verde);
+
+    font-size:
+        1.15rem;
+}
+
+
+.titulo-institucional span,
+.titulo-equipo > div > span {
+
+    display:
+        block;
+
+    font-size:
+        0.62rem;
+
+    letter-spacing:
+        1.2px;
+
+    font-weight:
+        700;
+
+    color:
+        #718079;
+
+    margin-bottom:
+        3px;
+}
+
+
+.titulo-institucional h2,
+.titulo-equipo h2 {
+
+    font-size:
+        1rem;
+
+    color:
+        #006d51;
+}
+
+
+/* Datos */
+
+.dato-institucional {
+
+    margin-bottom:
+        14px;
+}
+
+
+.etiqueta-dato {
+
+    display:
+        block;
+
+    font-size:
+        0.68rem;
+
+    color:
+        #77847e;
+
+    margin-bottom:
+        4px;
+}
+
+
+.dato-institucional strong {
+
+    display:
+        block;
+
+    font-size:
+        0.82rem;
+
+    color:
+        #172f42;
+}
+
+
+/* =========================================================
+   EQUIPO
+   ========================================================= */
+
+.informacion-equipo {
+
+    padding:
+        25px 25px;
+
+    border-right:
+        1px solid #dfe5e2;
+}
+
+
+.titulo-equipo {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        14px;
+}
+
+
+.titulo-equipo > span {
+
+    font-size:
+        1.3rem;
+}
+
+
+.tabla-equipo {
+
+    width:
+        100%;
+}
+
+
+.fila-equipo {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        40px 1fr 120px;
+
+    align-items:
+        center;
+
+    min-height:
+        31px;
+
+    border-bottom:
+        1px solid #edf1ef;
+
+    font-size:
+        0.68rem;
+
+    gap:
+        8px;
+}
+
+
+.fila-equipo:last-child {
+
+    border-bottom:
+        none;
+}
+
+
+.fila-equipo strong {
+
+    font-weight:
+        600;
+
+    color:
+        #173247;
+}
+
+
+.encabezado-tabla {
+
+    min-height:
+        30px;
+
+    color:
+        #6e7b75;
+
+    font-size:
+        0.6rem;
+
+    font-weight:
+        700;
+
+    background:
+        #f0f7f4;
+
+    padding:
+        0 7px;
+
+    border-radius:
+        5px;
+
+    text-transform:
+        uppercase;
+}
+
+
+/* =========================================================
+   FECHA / ORGULLO
+   ========================================================= */
+
+.zona-final {
+
+    padding:
+        25px 20px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        space-between;
+
+    align-items:
+        center;
+
+    text-align:
+        center;
+}
+
+
+.fecha {
+
+    width:
+        100%;
+
+    text-align:
+        left;
+}
+
+
+.fecha strong {
+
+    display:
+        block;
+
+    font-size:
+        0.82rem;
+
+    color:
+        #173247;
+}
+
+
+.orgullo {
+    transform: translateY(-20px);
+
+    position:
+        relative;
+
+    margin-top:
+        25px;
+
+    text-align:
+        center;
+}
+
+
+.orgullo h3 {
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        1.35rem;
+
+    line-height:
+        1;
+
+    color:
+        #173247;
+
+    font-weight:
+        500;
+}
+
+
+.orgullo em {
+
+    color:
+        #006d51;
+
+    font-style:
+        italic;
+}
+
+
+.corazon {
+
+    color:
+        var(--verde);
+
+    font-size:
+        1.5rem;
+
+    margin-top:
+        6px;
+}
+
+
+.decoracion-orgullo {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    margin-bottom:
+        5px;
+}
+
+
+.decoracion-orgullo span {
+
+    width:
+        20px;
+
+    height:
+        3px;
+
+    border-radius:
+        10px;
+
+    transform:
+        rotate(-25deg);
+}
+
+
+.decoracion-orgullo span:first-child {
+
+    background:
+        var(--verde);
+}
+
+
+.decoracion-orgullo span:last-child {
+
+    background:
+        var(--rojo);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        20px;
+
+    margin-top:
+        25px;
+
+    color:
+        #687770;
+
+    font-size:
+        0.72rem;
+
+    font-weight:
+        600;
+}
+
+
+.linea-footer {
+
+    width:
+        90px;
+
+    height:
+        2px;
+
+    border-radius:
+        10px;
+
+    background:
+        linear-gradient(
+            to right,
+            var(--verde),
+            var(--rojo)
+        );
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLETA
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .controles {
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .institucional {
+
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+
+    .zona-logos {
+
+        border-right:
+            1px solid #dfe5e2;
+
+        border-bottom:
+            1px solid #dfe5e2;
+    }
+
+
+    .informacion-institucional {
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid #dfe5e2;
+    }
+
+
+    .informacion-equipo {
+
+        border-right:
+            1px solid #dfe5e2;
+    }
+
+
+    .zona-final {
+
+        border-top:
+            1px solid #dfe5e2;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - CELULAR
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .contenedor {
+
+        width:
+            94%;
+
+        padding-top:
+            25px;
+    }
+
+
+    .encabezado h1 {
+
+        font-size:
+            2.7rem;
+    }
+
+
+    .encabezado p {
+
+        font-size:
+            0.88rem;
+
+        line-height:
+            1.5;
+    }
+
+
+    .tarjeta-control {
+
+        padding:
+            18px;
+    }
+
+
+    .titulo-control h2 {
+
+        font-size:
+            1rem;
+    }
+
+
+    .icono-control {
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        font-size:
+            1.2rem;
+    }
+
+
+    .valor-control {
+
+        font-size:
+            0.7rem;
+
+        padding:
+            6px 8px;
+    }
+
+
+    .bandera-contenedor {
+
+        width:
+            100%;
+
+        padding:
+            6px;
+
+        border-radius:
+            13px;
+    }
+
+
+    .bandera {
+
+        border-radius:
+            8px;
+    }
+
+
+    #escudo {
+
+        width:
+            48%;
+    }
+
+
+    .instruccion {
+
+        gap:
+            8px;
+
+        font-size:
+            0.7rem;
+    }
+
+
+    .linea-verde,
+    .linea-roja {
+
+        width:
+            22px;
+    }
+
+
+    .institucional {
+
+        grid-template-columns:
+            1fr;
+
+        border-radius:
+            17px;
+    }
+
+
+    .zona-logos {
+
+        min-height:
+            150px;
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid #dfe5e2;
+
+        padding:
+            20px;
+    }
+
+
+    .logo-tecnm {
+
+        width:
+            125px;
+    }
+
+
+    .logo-itp {
+
+        width:
+            100px;
+    }
+
+
+    .informacion-institucional {
+
+        border-right:
+            none;
+    }
+
+
+    .informacion-equipo {
+
+        border-right:
+            none;
+
+        border-bottom:
+            1px solid #dfe5e2;
+    }
+
+
+    .fila-equipo {
+
+        grid-template-columns:
+            32px 1fr;
+
+        padding:
+            8px 0;
+
+        min-height:
+            auto;
+    }
+
+
+    .fila-equipo span:last-child {
+
+        grid-column:
+            2;
+
+        color:
+            #718079;
+
+        font-size:
+            0.65rem;
+    }
+
+
+    .encabezado-tabla {
+
+        display:
+            none;
+    }
+
+
+    .zona-final {
+
+        min-height:
+            150px;
+
+        border-top:
+            none;
+    }
+
+
+    footer {
+
+        gap:
+            10px;
+    }
+
+
+    .linea-footer {
+
+        width:
+            35px;
+    }
+}
